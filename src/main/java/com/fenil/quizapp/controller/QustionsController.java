@@ -3,10 +3,7 @@ package com.fenil.quizapp.controller;
 import com.fenil.quizapp.Question;
 import com.fenil.quizapp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,14 +14,22 @@ public class QustionsController {
     @Autowired
     QuestionService questionService;
 
+    //get all questions
     @GetMapping("allQuestions")
     public List<Question> getAllQuestions(){
         return questionService.getAllQuestions();
     }
 
+    //get questions by category
     @GetMapping("category/{category}")
     public List<Question> getAllQuestionsByCategory(@PathVariable String category){
-            return questionService.getAllQuestionsByCategory(category);
+        return questionService.getAllQuestionsByCategory(category);
+    }
+
+    //add new questions
+    @PostMapping("add")
+    public String addNewQuestions(@RequestBody Question question){
+        return questionService.addQuestion(question);
     }
 
 
