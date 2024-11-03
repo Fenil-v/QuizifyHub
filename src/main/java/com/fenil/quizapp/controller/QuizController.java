@@ -1,5 +1,7 @@
 package com.fenil.quizapp.controller;
 
+import com.fenil.quizapp.model.QuestionWrapper;
+import com.fenil.quizapp.model.Response;
 import com.fenil.quizapp.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +21,14 @@ public class QuizController {
         return quizService.createQuiz(category,numQ,title);
     }
 
-//    @GetMapping("get/{id}")
-//    public ResponseEntity<List<Questions>> getQuizQuestions(@PathVariable Integer id){
-//
-//    }
+    @GetMapping("get/{id}")
+    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
+       return quizService.getQuizQuestions(id);
+    }
+
+    @PostMapping("submit/{id}")
+    public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<Response> res){
+        return quizService.calculateResult(id,res);
+    }
+
 }
