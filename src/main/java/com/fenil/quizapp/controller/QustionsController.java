@@ -1,6 +1,6 @@
 package com.fenil.quizapp.controller;
 
-import com.fenil.quizapp.Question;
+import com.fenil.quizapp.model.Question;
 import com.fenil.quizapp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

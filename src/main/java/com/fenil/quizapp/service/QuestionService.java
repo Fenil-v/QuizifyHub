@@ -1,7 +1,7 @@
 package com.fenil.quizapp.service;
 
 import com.fenil.quizapp.Dao.QuestionDao;
-import com.fenil.quizapp.Question;
+import com.fenil.quizapp.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

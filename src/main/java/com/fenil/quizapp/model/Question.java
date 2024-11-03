@@ -1,4 +1,4 @@
-package com.fenil.quizapp;
+package com.fenil.quizapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
